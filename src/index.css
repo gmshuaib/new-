@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+        .preview-content {
+            --font-heading: 'DM Sans', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --radius-global: 20px;
+            --radius-btn: 20px; 
+            --color-primary: #3b82f6;
+            --color-secondary: #4c0519;
+            --color-accent: #f59e0b;
+            --shadow-depth: none;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-blur: 12px;
+            
+            --section-spacing: 124.80000000000001px;
+            --site-max-width: 1440px;
+            
+            background-image: radial-gradient(circle at 85% 15%, #3b82f618 0%, transparent 45%), radial-gradient(circle at 15% 45%, #f59e0b12 0%, transparent 55%);
+            background-attachment: fixed;
+        
+        }
+
+        /* Layout & Spacing Overrides */
+        .preview-content section,
+        .preview-content .py-20,
+        .preview-content .py-24,
+        .preview-content .py-32 {
+            padding-top: var(--section-spacing) !important;
+            padding-bottom: var(--section-spacing) !important;
+        }
+
+        .preview-content .max-w-7xl,
+        .preview-content .max-w-6xl,
+        .preview-content .container {
+            max-width: var(--site-max-width) !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Typography - SCOPED to preview only (excluding editor toolbars) */
+        .preview-content .font-display:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content h1:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content h2:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content h3:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content h4:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content h5:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content h6:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *) {
+            font-family: var(--font-heading) !important;
+            letter-spacing: 0em !important;
+        }
+
+        .preview-content .font-sans:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content p:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content span:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content div:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *) {
+            font-family: var(--font-body) !important;
+        }
+
+        
+
+        /* Shapes & Clean Border Architecture - SCOPED (excluding editor toolbars) */
+        .preview-content .rounded-xl:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content .rounded-2xl:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content .rounded-lg:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content .rounded-md:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content .rounded-3xl:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *) {
+            border-radius: var(--radius-global) !important;
+            box-shadow: none !important;
+            
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+            border: 1px solid rgba(255,255,255,0.09) !important;
+        
+        }
+
+        .preview-content .glass-panel:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *) {
+            background: var(--glass-bg) !important;
+            backdrop-filter: blur(var(--glass-blur)) !important;
+            -webkit-backdrop-filter: blur(var(--glass-blur)) !important;
+            border: 1px solid var(--glass-border) !important;
+            box-shadow: none !important;
+        }
+        
+        .preview-content .rounded-full:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *) {
+             border-radius: 9999px !important;
+        }
+
+        /* Button Overrides - SCOPED (excluding editor buttons) */
+        .preview-content button[class*="bg-"]:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content .btn:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content .btn-primary:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content .btn-hero:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *) {
+            border-radius: var(--radius-btn) !important;
+            transition: all 0.2s ease;
+            
+        }
+        
+        /* Inputs - SCOPED */
+        .preview-content input:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content select:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *),
+        .preview-content textarea:not([data-editor-ui]):not([data-editor-ui] *):not(.webgeny-editor-ui):not(.webgeny-editor-ui *) {
+             border-radius: var(--radius-global) !important;
+        }
+
+        /* =========================================================
+           CRITICAL: SECTION EDIT CONTROLS & ACTION BAR ISOLATION
+           Preserves Webgeny UI styling on section regeneration,
+           magic rewrite, delete, and drag handles regardless of presets.
+           ========================================================= */
+        .preview-content [data-editor-ui],
+        .preview-content .webgeny-editor-ui,
+        .preview-content [data-editor-ui] *,
+        .preview-content .webgeny-editor-ui * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+            letter-spacing: normal !important;
+            text-shadow: none !important;
+        }
+
+        .preview-content .section-actions-toolbar,
+        .preview-content [data-editor-ui].section-actions-toolbar {
+            border-radius: 1rem !important; /* rounded-2xl */
+            border: 1px solid rgba(226, 232, 240, 0.7) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            background: rgba(255, 255, 255, 0.92) !important;
+        }
+
+        .dark .preview-content .section-actions-toolbar,
+        .dark .preview-content [data-editor-ui].section-actions-toolbar {
+            background: rgba(15, 23, 42, 0.92) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        .preview-content .section-actions-dropdown,
+        .preview-content [data-editor-ui].section-actions-dropdown {
+            border-radius: 0.75rem !important; /* rounded-xl */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+            border: 1px solid rgba(226, 232, 240, 0.9) !important;
+            background: #ffffff !important;
+        }
+
+        .dark .preview-content .section-actions-dropdown,
+        .dark .preview-content [data-editor-ui].section-actions-dropdown {
+            background: #0f172a !important;
+            border: 1px solid rgba(51, 65, 85, 0.8) !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+        }
+
+        .preview-content .section-actions-toolbar button,
+        .preview-content .section-actions-dropdown button,
+        .preview-content [data-editor-ui] button {
+            border: none !important;
+            border-radius: 0.75rem !important; /* rounded-xl */
+            box-shadow: none !important;
+        }
+
+        .preview-content [data-editor-ui].rounded-full,
+        .preview-content .webgeny-editor-ui.rounded-full {
+            border-radius: 9999px !important;
+        }
+    
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body, 'Inter', system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
